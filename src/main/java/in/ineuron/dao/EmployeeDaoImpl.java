@@ -7,11 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 import in.ineuron.bo.EmployeeBO;
 
 
 @Component(value = "empDao")
+@Profile({"dev", "uat"})
 public class EmployeeDaoImpl implements IEmployeeDao {
 	
 	@Autowired
@@ -24,6 +26,10 @@ public class EmployeeDaoImpl implements IEmployeeDao {
 	public List<EmployeeBO> getEmpsByDesg(String cond) throws Exception {
 		
 		ArrayList<EmployeeBO> listBO = new ArrayList<>();
+		
+		System.out.println();
+		System.out.println(dataSource.getClass().getName());
+		System.out.println();
 		
 		try(Connection connection = dataSource.getConnection(); 
 				PreparedStatement psmt = connection.prepareStatement(SQL_SELECT_QUERY + cond + "order by job")){
