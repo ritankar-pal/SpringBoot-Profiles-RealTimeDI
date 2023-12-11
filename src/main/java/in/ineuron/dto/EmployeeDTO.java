@@ -1,7 +1,10 @@
 package in.ineuron.dto;
 
+import java.io.Serializable;
 
-public class EmployeeDTO {
+public class EmployeeDTO implements Serializable{
+
+	private static final long serialVersionUID = 1L;
 	
 	private Integer srNo;
 	private Integer empNo;

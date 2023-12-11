@@ -28,7 +28,7 @@ public class EmployeeController {
 			
 			EmployeeVO empVO = new EmployeeVO();
 			empVO.setsNo(String.valueOf(emp.getSrNo()));
-			empVO.setEmpNo(String.valueOf(emp.getEmpName()));
+			empVO.setEmpNo(String.valueOf(emp.getEmpNo()));
 			empVO.setEmpName(emp.getEmpName());
 			empVO.setJob(emp.getJob());
 			empVO.setSal(emp.getSal().toString());

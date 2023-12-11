@@ -45,9 +45,11 @@ public class SpringBootProfilesRealTimeDiApplication {
 			List<EmployeeVO> empVOList = controller.showEmpsByDesgs(desgs);
 			System.out.println("Employee Details having:: " + Arrays.toString(desgs));
 			
+			System.out.println();
 			empVOList.forEach(emp ->{
 				System.out.println(emp);
 			});
+			System.out.println();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
